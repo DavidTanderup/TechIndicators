@@ -1,0 +1,8 @@
+C:\Users\S28562D\Source\Repos\Technical Indicators\bin\Debug\netcoreapp3.1\TechnicalIndicators.deps.json
+C:\Users\S28562D\Source\Repos\Technical Indicators\bin\Debug\netcoreapp3.1\TechnicalIndicators.dll
+C:\Users\S28562D\Source\Repos\Technical Indicators\bin\Debug\netcoreapp3.1\TechnicalIndicators.pdb
+C:\Users\S28562D\Source\Repos\Technical Indicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.csprojAssemblyReference.cache
+C:\Users\S28562D\Source\Repos\Technical Indicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.AssemblyInfoInputs.cache
+C:\Users\S28562D\Source\Repos\Technical Indicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.AssemblyInfo.cs
+C:\Users\S28562D\Source\Repos\Technical Indicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.dll
+C:\Users\S28562D\Source\Repos\Technical Indicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.pdb
