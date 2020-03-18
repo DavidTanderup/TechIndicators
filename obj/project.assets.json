@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\S28562D\\Source\\Repos\\Technical Indicators\\TechnicalIndicators.csproj",
+      "projectUniqueName": "C:\\Users\\S28562D\\Source\\Repos\\TechIndicators\\TechnicalIndicators.csproj",
       "projectName": "TechnicalIndicators",
-      "projectPath": "C:\\Users\\S28562D\\Source\\Repos\\Technical Indicators\\TechnicalIndicators.csproj",
+      "projectPath": "C:\\Users\\S28562D\\Source\\Repos\\TechIndicators\\TechnicalIndicators.csproj",
       "packagesPath": "C:\\Users\\S28562D\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\S28562D\\Source\\Repos\\Technical Indicators\\obj\\",
+      "outputPath": "C:\\Users\\S28562D\\Source\\Repos\\TechIndicators\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

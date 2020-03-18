@@ -5,9 +5,4 @@
     <RootNamespace>Technical_Indicators</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Momentum\" />
-    <Folder Include="Volatility\" />
-  </ItemGroup>
-
 </Project>
