@@ -6,3 +6,12 @@ C:\Users\S28562D\Source\Repos\Technical Indicators\obj\Debug\netcoreapp3.1\Techn
 C:\Users\S28562D\Source\Repos\Technical Indicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.AssemblyInfo.cs
 C:\Users\S28562D\Source\Repos\Technical Indicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.dll
 C:\Users\S28562D\Source\Repos\Technical Indicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.pdb
+C:\Users\Administrator\Source\Repos\TechIndicators\bin\Debug\netcoreapp3.1\TechnicalIndicators.deps.json
+C:\Users\Administrator\Source\Repos\TechIndicators\bin\Debug\netcoreapp3.1\TechnicalIndicators.dll
+C:\Users\Administrator\Source\Repos\TechIndicators\bin\Debug\netcoreapp3.1\TechnicalIndicators.pdb
+C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.csprojAssemblyReference.cache
+C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.AssemblyInfoInputs.cache
+C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.AssemblyInfo.cs
+C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.dll
+C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.pdb
