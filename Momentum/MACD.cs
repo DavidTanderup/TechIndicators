@@ -8,7 +8,7 @@ namespace Technical_Indicators.Momentum
     /// <summary>
     /// Moving Average Convergence Divergence
     /// </summary>
-    public class MovingAverageConvergenceDivergence
+    public class MACD
     {
         /// <summary>
         /// Constant period value of nine.
@@ -29,7 +29,7 @@ namespace Technical_Indicators.Momentum
         /// Takes a decimal array of close prices and returns arrays of EMA 12, EMA 26, MACD, and Signal calculations.
         /// </summary>
         /// <param name="closePrices">Array of market close prices for the Asset.</param>
-        public MovingAverageConvergenceDivergence(decimal[] closePrices)
+        public MACD(decimal[] closePrices)
         {
             if (closePrices.Length < 34)
             {
@@ -41,7 +41,7 @@ namespace Technical_Indicators.Momentum
             SignalArray = GetSignal();
             EMA12Array = GetEMA(GetPriorEMA(twelve), twelve);
             EMA26Array = GetEMA(GetPriorEMA(twentySix), twentySix);
-            MACD = MACDArray[0];
+            Macd = MACDArray[0];
             EMA12 = EMA12Array[0];
             EMA26 = EMA26Array[0];
             Signal = SignalArray[0];
@@ -54,18 +54,18 @@ namespace Technical_Indicators.Momentum
         /// <param name="ema12">Most recent EMA 12 calculation for the Asset.</param>
         /// <param name="ema26">Most recent EMA 26 calculation for the Asset.</param>
         /// <param name="signal">Most recent Signal calculation for the Asset.</param>
-        public MovingAverageConvergenceDivergence(decimal close, decimal ema12, decimal ema26, decimal signal)
+        public MACD(decimal close, decimal ema12, decimal ema26, decimal signal)
         {
             EMA12 = GetEMA(close, ema12, twelve);
             EMA26 = GetEMA(close, ema26, twentySix);
-            MACD = EMA12 - EMA26;
-            Signal = GetEMA(MACD, signal, nine);
+            Macd = EMA12 - EMA26;
+            Signal = GetEMA(Macd, signal, nine);
         }
 
         /// <summary>
         /// Moving Average Convergence Divergence
         /// </summary>
-        public MovingAverageConvergenceDivergence() { }
+        public MACD() { }
 
         /// <summary>
         /// Array of MACD calculations.
@@ -105,7 +105,7 @@ namespace Technical_Indicators.Momentum
         /// <summary>
         /// Moving Average Convergence Divergence. MACD = EMA 12 - EMA 26
         /// </summary>
-        public decimal MACD { get; set; }
+        public decimal Macd { get; set; }
 
         /// <summary>
         /// Exponential Moving Average for 9 Periods. Calculated from MACD values.
@@ -120,14 +120,14 @@ namespace Technical_Indicators.Momentum
         /// <param name="ema26">Most recent EMA 26 calculation for the Asset.</param>
         /// <param name="signal">Most recent Signal calculation for the Asset.</param>
         /// <returns>MACD: EMA 12, EMA 26, MACD, and Signal calculations. </returns>
-        public MovingAverageConvergenceDivergence GetCurrent(decimal close, decimal ema12, decimal ema26, decimal signal)
+        public MACD GetCurrent(decimal close, decimal ema12, decimal ema26, decimal signal)
         {
-            return new MovingAverageConvergenceDivergence()
+            return new MACD()
             {
                 EMA12 = GetEMA(close, ema12, twelve),
                 EMA26 = GetEMA(close, ema26, twentySix),
-                MACD = EMA12 - EMA26,
-                Signal = GetEMA(MACD, signal, nine)
+                Macd = EMA12 - EMA26,
+                Signal = GetEMA(Macd, signal, nine)
             };
 
         }

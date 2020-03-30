@@ -6,32 +6,36 @@ namespace TechnicalIndicators.Volume
 {
     public class OnBalanceVolume
     {
-        public OnBalanceVolume(decimal[] volume, decimal[] closePrice)
+        public OnBalanceVolume(ulong[] volume, decimal[] closePrices)
         {
-            OBV = GetOBV(volume, closePrice).OBV;
-            OBVHistory = GetOBV(volume, closePrice).OBVHistory;
+            ClosePrices = closePrices;
+            Volume = volume;
+            OBVArray = GetOBV();
+            OBV = OBVArray[0];
+
         }
 
-        private OnBalanceVolume() { }
         public decimal OBV { get; set; }
-        public decimal [] OBVHistory { get; set; }
+        public decimal[] OBVArray { get; set; }
+        private decimal[] ClosePrices { get; set; }
+        private ulong[] Volume { get; set; }
 
 
-        private OnBalanceVolume GetOBV(decimal[] volume, decimal[] closePrice)
+        private decimal[] GetOBV()
         {
-            decimal[] history = new decimal[volume.Length];
-            decimal obv = 0m;
-            decimal previousOBV = volume[volume.Length - 1];
-            history[volume.Length-1]= previousOBV;
-            for (int i = volume.Length - 2; i >= 0; i--)
+            decimal[] history = new decimal[Volume.Length];
+            decimal obv;
+            decimal previousOBV = Volume[^1];
+            history[Volume.Length - 1] = previousOBV;
+            for (int i = Volume.Length - 2; i >= 0; i--)
             {
-                if (closePrice[i] > closePrice[i + 1])
+                if (ClosePrices[i] > ClosePrices[i + 1])
                 {
-                    obv = previousOBV + volume[i];
+                    obv = previousOBV + Volume[i];
                     history[i] = obv;
                     previousOBV = obv;
                 }
-                else if (closePrice[i] == closePrice[i + 1])
+                else if (ClosePrices[i] == ClosePrices[i + 1])
                 {
                     obv = previousOBV + 0;
                     history[i] = obv;
@@ -39,12 +43,12 @@ namespace TechnicalIndicators.Volume
                 }
                 else
                 {
-                    obv = previousOBV - volume[i];
+                    obv = previousOBV - Volume[i];
                     history[i] = obv;
                     previousOBV = obv;
                 }
             }
-            return new OnBalanceVolume() { OBVHistory = history, OBV = obv};
+            return history;
         }
     }
 }
