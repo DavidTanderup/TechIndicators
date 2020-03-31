@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace TechnicalIndicators.Trend
 {
+    /// <summary>
+    /// A moving average is a popular indicator in technical analysis that helps to filter out the “noise” from short-term price fluctuations.
+    /// </summary>
     public class MovingAverage
     {
         /// <summary>
@@ -11,9 +14,10 @@ namespace TechnicalIndicators.Trend
         /// <param name="closePrices">Prices from the close of a given period</param>
         public MovingAverage(decimal[] closePrices)
         {
-            TwoHundredDayArray = GetAverage(200, closePrices);
-            OneHundredDayArray = GetAverage(100, closePrices);
-            FiftyDayArray = GetAverage(50, closePrices);
+            ClosePrices = closePrices;
+            TwoHundredDayArray = GetAverage(200);
+            OneHundredDayArray = GetAverage(100);
+            FiftyDayArray = GetAverage(50);
             TwoHundredDay = TwoHundredDayArray[0];
             OneHundredDay = OneHundredDayArray[0];
             FiftyDay = FiftyDayArray[0];
@@ -42,22 +46,25 @@ namespace TechnicalIndicators.Trend
         /// Fifty Day Simple Moving Average
         /// </summary>
         public decimal FiftyDay { get; }
-
+        /// <summary>
+        /// Array of Close Prices
+        /// </summary>
+        public decimal[] ClosePrices { get; }
 
         /// <summary>
-        /// Array of Averages for a given period of time. Note: Method assumes prices are decending (newest to oldest)
+        /// Array of averages for a given period of time. Note: Method assumes prices are decending (newest to oldest)
         /// </summary>
         /// <param name="period">Number of time periods being averaged</param>
-        /// <param name="closePrices">Prices from the close of a given period</param>
+        /// <param name="ClosePrices">Prices from the close of a given period</param>
         /// <returns>Decimal Array</returns>
-        public decimal[] GetAverage(int period, decimal[] closePrices)
+        public decimal[] GetAverage(int period)
         {
-            decimal[] vs = new decimal[closePrices.Length - period];
-            var start = closePrices.Length - (period + 1);
-            var end = closePrices.Length - 1;
+            decimal[] vs = new decimal[ClosePrices.Length - period];
+            var start = ClosePrices.Length - (period + 1);
+            var end = ClosePrices.Length - 1;
             for (int i = start; i >= 0; i--)
             {
-                vs[i] = closePrices[i..end].Sum() / period;
+                vs[i] = ClosePrices[i..end].Sum() / period;
                 end--;
             }
             return vs;

@@ -6,6 +6,7 @@ namespace TechnicalIndicators.Volume
 {
     public class OnBalanceVolume
     {
+        // TODO: Test and verify
         public OnBalanceVolume(ulong[] volume, decimal[] closePrices)
         {
             ClosePrices = closePrices;
