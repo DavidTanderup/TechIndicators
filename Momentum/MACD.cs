@@ -26,9 +26,9 @@ namespace Technical_Indicators.Momentum
         private const int twentySix = 26;
 
         /// <summary>
-        /// Takes a decimal array of close prices and returns arrays of EMA 12, EMA 26, MACD, and Signal calculations.
+        /// Takes a decimal array of Close prices and returns arrays of EMA 12, EMA 26, MACD, and Signal calculations.
         /// </summary>
-        /// <param name="closePrices">Array of market close prices for the Asset.</param>
+        /// <param name="closePrices">Array of market Close prices for the Asset.</param>
         public MACD(decimal[] closePrices)
         {
             if (closePrices.Length < 34)
