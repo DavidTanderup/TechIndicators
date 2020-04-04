@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Technical_Indicators.Trend
+namespace TechnicalIndicators.Trend
 {
     /// <summary>
     /// A technical indicator that is used to identify trend changes in the price of an asset, as well as the strength of that trend.

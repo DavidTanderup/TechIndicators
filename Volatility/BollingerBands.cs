@@ -2,7 +2,7 @@
 using System.Linq;
 using TechnicalIndicators.Trend;
 
-namespace Technical_Indicators.Volatility
+namespace TechnicalIndicators.Volatility
 {
     /// <summary>
     /// Bollinger Bands® are a technical analysis tool developed by John Bollinger.

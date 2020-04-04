@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Technical_Indicators.Momentum
+namespace TechnicalIndicators.Momentum
 {
     /// <summary>
     /// Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator that shows the relationship between two moving averages of a Asset's price. 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Technical_Indicators.Momentum
+namespace TechnicalIndicators.Momentum
 {
     /// <summary>
     /// The relative strength index (RSI) is a momentum indicator that measures the magnitude of recent price changes 
