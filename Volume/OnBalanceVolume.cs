@@ -7,7 +7,7 @@ namespace TechnicalIndicators.Volume
     public class OnBalanceVolume
     {
         // TODO: Test and verify
-        public OnBalanceVolume(ulong[] volume, decimal[] closePrices)
+        public OnBalanceVolume(long[] volume, decimal[] closePrices)
         {
             ClosePrices = closePrices;
             Volume = volume;
@@ -16,17 +16,17 @@ namespace TechnicalIndicators.Volume
 
         }
 
-        public decimal OBV { get; set; }
-        public decimal[] OBVArray { get; set; }
+        public long OBV { get; set; }
+        public long[] OBVArray { get; set; }
         private decimal[] ClosePrices { get; set; }
-        private ulong[] Volume { get; set; }
+        private long[] Volume { get; set; }
 
 
-        private decimal[] GetOBV()
+        private long[] GetOBV()
         {
-            decimal[] history = new decimal[Volume.Length];
-            decimal obv;
-            decimal previousOBV = Volume[^1];
+            long[] history = new long[Volume.Length];
+            long obv;
+            long previousOBV = Volume[^1];
             history[Volume.Length - 1] = previousOBV;
             for (int i = Volume.Length - 2; i >= 0; i--)
             {

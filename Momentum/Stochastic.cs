@@ -8,7 +8,7 @@ namespace TechnicalIndicators.Momentum
     /// <summary>
     /// A momentum indicator comparing a particular closing price of a security to a range of its prices over a certain period of time.
     /// </summary>
-    public class StochasticOscillator
+    public class Stochastic
     {
         /// <summary>
         /// A momentum indicator that shows the location of the close relative to the high-low range over a set number of periods.
@@ -16,30 +16,30 @@ namespace TechnicalIndicators.Momentum
         /// <param name="highPrices">High price of the asset.</param>
         /// <param name="lowPrices">Low price of the asset.</param>
         /// <param name="closePrices">Close price of the asset.</param>
-        public StochasticOscillator(decimal [] highPrices, decimal [] lowPrices,decimal[] closePrices)
+        public Stochastic(decimal [] highPrices, decimal [] lowPrices,decimal[] closePrices)
         {
-            StochasticSlowArray = GetStochastic(highPrices, lowPrices, closePrices);
-            StochasticSlow = StochasticSlowArray[0];
-            StochasticFastArray = GetFastStochastic(StochasticSlowArray);
-            StochasticFast = StochasticFastArray[0];
+            SlowArray = GetStochastic(highPrices, lowPrices, closePrices);
+            Slow = SlowArray[0];
+            FastArray = GetFastStochastic(SlowArray);
+            Fast = FastArray[0];
 
         }
         /// <summary>
         /// Array of the "Fast" %D stochastic data points.
         /// </summary>
-        public decimal [] StochasticFastArray { get; }
+        public decimal [] FastArray { get; }
         /// <summary>
         /// Array of the "Slow" %K stochastic data points.
         /// </summary>
-        public decimal [] StochasticSlowArray { get; }
+        public decimal [] SlowArray { get; }
         /// <summary>
         /// The "Fast" Stochastic (%D) is the 3 period moving average of %K
         /// </summary>
-        public decimal StochasticFast { get;}
+        public decimal Fast { get;}
         /// <summary>
         /// The "Slow" Stochastic (%K) 
         /// </summary>
-        public decimal StochasticSlow { get; }
+        public decimal Slow { get; }
 
         private decimal [] GetStochastic(decimal [] highPrices, decimal [] lowPrices, decimal [] closePrices)
         {
