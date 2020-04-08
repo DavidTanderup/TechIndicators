@@ -6,7 +6,7 @@ using System.Text;
 namespace TechnicalIndicators.Momentum
 {
     /// <summary>
-    /// Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator that shows the relationship between two moving averages of a Asset's price. 
+    /// Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator that shows the relationship between two moving averages of a asset's price. 
     /// </summary>
     public class MACD
     {
@@ -28,7 +28,7 @@ namespace TechnicalIndicators.Momentum
         /// <summary>
         /// Takes a decimal array of Close prices and returns arrays of EMA 12, EMA 26, MACD, and Signal calculations.
         /// </summary>
-        /// <param name="closePrices">Array of market Close prices for the asset.</param>
+        /// <param name="closePrices">Close price of the asset.</param>
         public MACD(decimal[] closePrices)
         {
             if (closePrices.Length < 34)
@@ -48,12 +48,12 @@ namespace TechnicalIndicators.Momentum
         }
 
         /// <summary>
-        /// Returns single value EMA 12, EMA 26, MACD, and Signal calculations.
+        /// Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator that shows the relationship between two moving averages of a asset's price. Returns single value EMA 12, EMA 26, MACD, and Signal calculations.
         /// </summary>
-        /// <param name="close">Most recent Close price for the Asset.</param>
-        /// <param name="ema12">Most recent EMA 12 calculation for the Asset.</param>
-        /// <param name="ema26">Most recent EMA 26 calculation for the Asset.</param>
-        /// <param name="signal">Most recent Signal calculation for the Asset.</param>
+        /// <param name="close">Close price of the asset.</param>
+        /// <param name="ema12">Most recent EMA 12 calculation for the asset.</param>
+        /// <param name="ema26">Most recent EMA 26 calculation for the asset.</param>
+        /// <param name="signal">Most recent Signal calculation for the asset.</param>
         public MACD(decimal close, decimal ema12, decimal ema26, decimal signal)
         {
             EMA12 = GetEMA(close, ema12, twelve);
@@ -63,7 +63,7 @@ namespace TechnicalIndicators.Momentum
         }
 
         /// <summary>
-        /// Moving Average Convergence Divergence
+        /// Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator that shows the relationship between two moving averages of a asset's price. 
         /// </summary>
         public MACD() { }
 
@@ -93,12 +93,12 @@ namespace TechnicalIndicators.Momentum
         private decimal[] ClosePrices { get; }
 
         /// <summary>
-        /// Exponential Moving Average for 12 Periods. Calculated from close prices.
+        /// Exponential Moving Average for 12 Periods.
         /// </summary>
         public decimal EMA12 { get; set; }
 
         /// <summary>
-        /// Exponential Moving Average for 26 Periods. Calculated from close prices.
+        /// Exponential Moving Average for 26 Periods. 
         /// </summary>
         public decimal EMA26 { get; set; }
 
@@ -115,10 +115,10 @@ namespace TechnicalIndicators.Momentum
         /// <summary>
         /// Provides calculation for the most recent MACD values. 
         /// </summary>
-        /// <param name="close">Most recent close price for the Asset.</param>
-        /// <param name="ema12">Most recent EMA 12 calculation for the Asset.</param>
-        /// <param name="ema26">Most recent EMA 26 calculation for the Asset.</param>
-        /// <param name="signal">Most recent Signal calculation for the Asset.</param>
+        /// <param name="close">Most recent close price for the asset.</param>
+        /// <param name="ema12">Most recent EMA 12 calculation for the asset.</param>
+        /// <param name="ema26">Most recent EMA 26 calculation for the asset.</param>
+        /// <param name="signal">Most recent Signal calculation for the asset.</param>
         /// <returns>MACD: EMA 12, EMA 26, MACD, and Signal calculations. </returns>
         public MACD GetCurrent(decimal close, decimal ema12, decimal ema26, decimal signal)
         {

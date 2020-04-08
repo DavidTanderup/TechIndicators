@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace TechnicalIndicators.Momentum
 {
@@ -14,7 +12,7 @@ namespace TechnicalIndicators.Momentum
          /// The relative strength index (RSI) is a momentum indicator that measures the magnitude of recent price changes 
          /// to determine overbought or oversold conditions in the price of the asset.
          /// </summary>
-         /// <param name="closePrices">Array of market close prices for the asset.</param>
+         /// <param name="closePrices">Close price of the asset.</param>
         public RelativeStrengthIndex(decimal[] closePrices)
         {
             ClosePrices = closePrices;
@@ -22,14 +20,23 @@ namespace TechnicalIndicators.Momentum
             RSI = RSIArray[0];
         }
         /// <summary>
-        /// Array of close Prices
+        /// Array of close Prices.
         /// </summary>
         private decimal[] ClosePrices { get; }
+        /// <summary>
+        /// Array of RSI data points.
+        /// </summary>
         public decimal[] RSIArray { get; }
+        /// <summary>
+        /// Most recent Relative Strength Index data point.
+        /// </summary>
         public decimal RSI { get; }
 
-
-        public decimal[] GetRSI()
+        /// <summary>
+        /// Performs the Relative Strength Index calculation.
+        /// </summary>
+        /// <returns>Decimal array</returns>
+        private decimal[] GetRSI()
         {
             // track the changes in closing price
             var changeSize = ClosePrices.Length - 1;
