@@ -2,7 +2,28 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Technical_Indicators</RootNamespace>
+    <RootNamespace>TechnicalIndicators</RootNamespace>
+    <AssemblyName>C#TechnicalIndicators</AssemblyName>
+    <Company>Open Source Black Box Trading</Company>
+    <Authors>Open Source Black Box Trading</Authors>
+    <Description>Ten major technical indicators most commonly used in Stock and FOREX.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>CSharpTechnicalIndicators</PackageId>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>OpenSourceLicense.txt</PackageLicenseFile>
+    <Copyright>2020 David Tanderup</Copyright>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\Davet\Source\Repos\TechIndicators\C#TechnicalIndicators.xml</DocumentationFile>
+    <OutputPath>obj\Release\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="OpenSourceLicense.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

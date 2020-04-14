@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>C#TechnicalIndicators</name>
+    </assembly>
+    <members>
+        <member name="T:TechnicalIndicators.Momentum.MACD">
+            <summary>
+            Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator that shows the relationship between two moving averages of a asset's price. 
+            </summary>
+        </member>
+        <member name="F:TechnicalIndicators.Momentum.MACD.nine">
+            <summary>
+            Constant period value of nine.
+            </summary>
+        </member>
+        <member name="F:TechnicalIndicators.Momentum.MACD.twelve">
+            <summary>
+            Constant period value of twelve.
+            </summary>
+        </member>
+        <member name="F:TechnicalIndicators.Momentum.MACD.twentySix">
+            <summary>
+            Constant period value of Twenty-Six.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.#ctor(System.Decimal[])">
+            <summary>
+            Takes a decimal array of Close prices and returns arrays of EMA 12, EMA 26, MACD, and Signal calculations.
+            </summary>
+            <param name="closePrices">Close price of the asset.</param>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.#ctor(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator that shows the relationship between two moving averages of a asset's price. Returns single value EMA 12, EMA 26, MACD, and Signal calculations.
+            </summary>
+            <param name="close">Close price of the asset.</param>
+            <param name="ema12">Most recent EMA 12 calculation for the asset.</param>
+            <param name="ema26">Most recent EMA 26 calculation for the asset.</param>
+            <param name="signal">Most recent Signal calculation for the asset.</param>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.#ctor">
+            <summary>
+            Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator that shows the relationship between two moving averages of a asset's price. 
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.MACD.MACDArray">
+            <summary>
+            Array of MACD calculations.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.MACD.SignalArray">
+            <summary>
+            Array of Signal calculations.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.MACD.EMA12Array">
+            <summary>
+            Array of EMA 12 calculations.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.MACD.EMA26Array">
+            <summary>
+            Array of EMA 26 calculations.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.MACD.ClosePrices">
+            <summary>
+            Array of Close Prices
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.MACD.EMA12">
+            <summary>
+            Exponential Moving Average for 12 Periods.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.MACD.EMA26">
+            <summary>
+            Exponential Moving Average for 26 Periods. 
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.MACD.Macd">
+            <summary>
+            Moving Average Convergence Divergence. MACD = EMA 12 - EMA 26
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.MACD.Signal">
+            <summary>
+            Exponential Moving Average for 9 Periods. Calculated from MACD values.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.GetCurrent(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Provides calculation for the most recent MACD values. 
+            </summary>
+            <param name="close">Most recent close price for the asset.</param>
+            <param name="ema12">Most recent EMA 12 calculation for the asset.</param>
+            <param name="ema26">Most recent EMA 26 calculation for the asset.</param>
+            <param name="signal">Most recent Signal calculation for the asset.</param>
+            <returns>MACD: EMA 12, EMA 26, MACD, and Signal calculations. </returns>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.GetPriorEMA(System.Int32)">
+            <summary>
+            Gets the first EMA value in the EMA Array
+            </summary>
+            <param name="period">Period of time to be evaluated.</param>
+            <returns>Decimal</returns>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.GetMACD">
+            <summary>
+            Calculates the Moving Average Convergence Divergence
+            </summary>
+            <returns>Decimal array of MACD values</returns>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.GetEMA(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Calculates a single EMA. Requires the current Close price, current EMA of the same period, and the period being evaluated.
+            </summary>
+            <param name="close">Most recent Close price for the Asset.</param>
+            <param name="ema">Most recent EMA for the same period.</param>
+            <param name="period">Period of time to be evaluated.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.GetEMA(System.Decimal,System.Decimal)">
+            <summary>
+            Calculates EMA values for a series of Close prices. Returns an array of EMA.
+            </summary>
+            <param name="ema">The first EMA in the series.</param>
+            <param name="period">Period of time to be evaluated.</param>
+            <returns>Decimal array of EMA</returns>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.GetSignal">
+            <summary>
+            Calculates Signal values for a series of MACD values. Returns an array of Signals.
+            </summary>
+            <returns>Decimal array of Signal Calculations</returns>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.TodaySmooth(System.Decimal)">
+            <summary>
+            Calculates the "Today" smoothing weight for the Exponential Moving Average.
+            </summary>
+            <param name="period">Period of time to be evaluated</param>
+            <returns>Decimal</returns>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.MACD.YesterdaySmooth(System.Decimal)">
+            <summary>
+            Calculates the "Tomorrow" smoothing weight for the Exponential Moving Average.
+            </summary>
+            <param name="period">Period of time to be evaluated</param>
+            <returns>Decimal</returns>
+        </member>
+        <member name="T:TechnicalIndicators.Momentum.RelativeStrengthIndex">
+            <summary>
+            The relative strength index (RSI) is a momentum indicator that measures the magnitude of recent price changes 
+            to determine overbought or oversold conditions in the price of the asset.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.RelativeStrengthIndex.#ctor(System.Decimal[])">
+            <summary>
+            The relative strength index (RSI) is a momentum indicator that measures the magnitude of recent price changes 
+            to determine overbought or oversold conditions in the price of the asset.
+            </summary>
+            <param name="closePrices">Close price of the asset.</param>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.RelativeStrengthIndex.ClosePrices">
+            <summary>
+            Array of close Prices.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.RelativeStrengthIndex.RSIArray">
+            <summary>
+            Array of RSI data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.RelativeStrengthIndex.RSI">
+            <summary>
+            Most recent Relative Strength Index data point.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.RelativeStrengthIndex.GetRSI">
+            <summary>
+            Performs the Relative Strength Index calculation.
+            </summary>
+            <returns>Decimal array</returns>
+        </member>
+        <member name="T:TechnicalIndicators.Momentum.Stochastic">
+            <summary>
+            A momentum indicator comparing a particular closing price of a security to a range of its prices over a certain period of time.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Momentum.Stochastic.#ctor(System.Decimal[],System.Decimal[],System.Decimal[])">
+            <summary>
+            A momentum indicator that shows the location of the close relative to the high-low range over a set number of periods.
+            </summary>
+            <param name="highPrices">High price of the asset.</param>
+            <param name="lowPrices">Low price of the asset.</param>
+            <param name="closePrices">Close price of the asset.</param>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.Stochastic.FastArray">
+            <summary>
+            Array of the "Fast" %D stochastic data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.Stochastic.SlowArray">
+            <summary>
+            Array of the "Slow" %K stochastic data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.Stochastic.Fast">
+            <summary>
+            The "Fast" Stochastic (%D) is the 3 period moving average of %K
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Momentum.Stochastic.Slow">
+            <summary>
+            The "Slow" Stochastic (%K) 
+            </summary>
+        </member>
+        <member name="T:TechnicalIndicators.Trend.Aroon">
+            <summary>
+            A technical indicator that is used to identify trend changes in the price of an asset, as well as the strength of that trend.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Trend.Aroon.#ctor(System.Decimal[],System.Decimal[])">
+            <summary>
+            A technical indicator that is used to identify trend changes in the price of an asset, as well as the strength of that trend.
+            The default period of evaluation is 25. Use other constructor to customize period.
+            </summary>
+            <param name="highPrices">High price of the asset.</param>
+            <param name="lowPrices">Low price of the asset.</param>
+        </member>
+        <member name="M:TechnicalIndicators.Trend.Aroon.#ctor(System.Decimal[],System.Decimal[],System.Int32)">
+            <summary>
+            A technical indicator that is used to identify trend changes in the price of an asset, as well as the strength of that trend.
+            The default period of evaluation is 25. Use this constructor to customize period.
+            </summary>
+            <param name="highPrices">High price of the asset.</param>
+            <param name="lowPrices">Low price of the asset.</param>
+            <param name="customPeriod">Period set to user preference.</param>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.Aroon.AroonUp">
+            <summary>
+            Most recent data point for Aroon Up indicator.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.Aroon.AroonDown">
+            <summary>
+            Most recent data point for Aroon Down indicator.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.Aroon.AroonUpArray">
+            <summary>
+            Array of Aroon Up data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.Aroon.AroonDownArray">
+            <summary>
+            Array of Aroon Down data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.Aroon.Period">
+            <summary>
+            Period of time being evaluated.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Trend.Aroon.GetAroon(System.Decimal[],TechnicalIndicators.Trend.Aroon.EndPoint)">
+            <summary>
+            Performs the Aroon calculations.
+            </summary>
+            <param name="prices">The prices: High or Low being evaluated.</param>
+            <param name="endPoint">enum that specifies if the calculation is the High or Low</param>
+            <returns></returns>
+        </member>
+        <member name="M:TechnicalIndicators.Trend.Aroon.GetCount(System.Decimal[],System.Decimal)">
+            <summary>
+            Finds the distance of the highest high or lowest low from the current value.
+            </summary>
+            <param name="aroonArray">Range being evaluated.</param>
+            <param name="end">The highest high or lowest low</param>
+            <returns></returns>
+        </member>
+        <member name="T:TechnicalIndicators.Trend.AverageDirectionalIndex">
+            <summary>
+            Average Directional Index (ADX) is a technical analysis indicator used by some traders to determine the strength of a trend.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Trend.AverageDirectionalIndex.#ctor(System.Decimal[],System.Decimal[],System.Decimal[])">
+            <summary>
+            Average Directional Index (ADX) is a technical analysis indicator used by some traders to determine the strength of a trend.
+            </summary>
+            <param name="highPrices">High price of the asset.</param>
+            <param name="lowPrices">Low price of the asset.</param>
+            <param name="closePrices">Close price of the asset.</param>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.AverageDirectionalIndex.ADXArray">
+            <summary>
+            Array of ADX data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.AverageDirectionalIndex.ADX">
+            <summary>
+            Most recent ADX data point.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.AverageDirectionalIndex.PlusDMIArray">
+            <summary>
+            Array of positive Directional Movement Indicator (+DMI) data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.AverageDirectionalIndex.PlusDMI">
+            <summary>
+            Most recent positive Directional Movement Indicator (+DMI) data point.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.AverageDirectionalIndex.MinusDMIArray">
+            <summary>
+            Array of negative Directional Movement Indicator (-DMI) data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.AverageDirectionalIndex.MinusDMI">
+            <summary>
+            Most recent negative Directional Movement Indicator (-DMI) data point.
+            </summary>
+        </member>
+        <member name="T:TechnicalIndicators.Trend.MovingAverage">
+            <summary>
+            A moving average is a popular indicator in technical analysis that helps to filter out the “noise” from short-term price fluctuations.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Trend.MovingAverage.#ctor(System.Decimal[])">
+            <summary>
+            Finds the Simple Moving Average (SMA) for the closing prices
+            </summary>
+            <param name="closePrices">Prices from the close of a given period</param>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.MovingAverage.TwoHundredDayArray">
+            <summary>
+            Decimal Array of Two Hundred Day Simple Moving Average
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.MovingAverage.OneHundredDayArray">
+            <summary>
+            Decimal Array of One Hundred Day Simple Moving Average
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.MovingAverage.FiftyDayArray">
+            <summary>
+            Decimal Array of Fifty Day Simple Moving Average
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.MovingAverage.TwoHundredDay">
+            <summary>
+            Two Hundred Day Simple Moving Average
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.MovingAverage.OneHundredDay">
+            <summary>
+            One Hundred Day Simple Moving Average
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.MovingAverage.FiftyDay">
+            <summary>
+            Fifty Day Simple Moving Average
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Trend.MovingAverage.ClosePrices">
+            <summary>
+            Array of Close Prices
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Trend.MovingAverage.GetAverage(System.Int32)">
+            <summary>
+            Array of averages for a given period of time. Note: Method assumes prices are decending (newest to oldest)
+            </summary>
+            <param name="period">Number of time periods being averaged</param>
+            <returns>Decimal Array</returns>
+        </member>
+        <member name="T:TechnicalIndicators.Volatility.AverageTrueRange">
+            <summary>
+            The average true range (ATR) is a technical analysis indicator that measures market volatility by decomposing the entire range of an asset price for that period.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Volatility.AverageTrueRange.#ctor(System.Decimal[],System.Decimal[],System.Decimal[])">
+            <summary>
+            The average true range (ATR) is a technical analysis indicator that measures market volatility by decomposing the entire range of an asset price for that period.
+            </summary>
+            <param name="highPrices">High price of the asset.</param>
+            <param name="lowPrices">Low price of the asset.</param>
+            <param name="closePrices">Close price of the asset.</param>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.AverageTrueRange.ATRArray">
+            <summary>
+            Array of Average True Range data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.AverageTrueRange.ATR">
+            <summary>
+            Most recent Average True Range data point.
+            </summary>
+        </member>
+        <member name="T:TechnicalIndicators.Volatility.BollingerBands">
+            <summary>
+            Bollinger Bands® are a technical analysis tool developed by John Bollinger.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Volatility.BollingerBands.#ctor(System.Decimal[])">
+            <summary>
+            A set of lines plotted two standard deviations (positively and negatively) away from a simple moving average (SMA) of the Asset's price
+            </summary>
+            <param name="closePrices"></param>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.BollingerBands.UpperBandArray">
+            <summary>
+            Decimal array of Upper Band data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.BollingerBands.MiddleBandArray">
+            <summary>
+            Decimal array of 20 period SMA data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.BollingerBands.LowerBandArray">
+            <summary>
+            Decimal array of Lower Band data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.BollingerBands.UpperBand">
+            <summary>
+             Point plotted two standard deviations positively away from a simple moving average (SMA) of the Asset's price. 
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.BollingerBands.MiddleBand">
+            <summary>
+            Simple moving average (SMA) of the Asset's price for 20 periods.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.BollingerBands.LowerBand">
+            <summary>
+             Point plotted two standard deviations negatively away from a simple moving average (SMA) of the Asset's price.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.BollingerBands.ClosePrices">
+            <summary>
+            Array of Close Prices
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volatility.BollingerBands.StandDevArray">
+            <summary>
+            Array of standard deviations points.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Volatility.BollingerBands.GetUpper">
+            <summary>
+            Calculates the Upper Band. 
+            </summary>
+            <returns>Decimal Array</returns>
+        </member>
+        <member name="M:TechnicalIndicators.Volatility.BollingerBands.GetLower">
+            <summary>
+            Calculates the Lower Band.
+            </summary>
+            <returns>Decimal Array</returns>
+        </member>
+        <member name="M:TechnicalIndicators.Volatility.BollingerBands.GetStanDev">
+            <summary>
+            Gets the calculations of standard deviations for the Close price data set.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TechnicalIndicators.Volatility.BollingerBands.StandardDeviation(System.Decimal[])">
+            <summary>
+            Calculates the standard deviation for a given data set.
+            </summary>
+            <param name="vs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TechnicalIndicators.Volume.AccumDistroLine">
+            <summary>
+            Volume-based indicator designed to measure the cumulative flow of money into and out of a asset.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Volume.AccumDistroLine.#ctor(System.Decimal[],System.Decimal[],System.Decimal[],System.Int64[])">
+            <summary>
+            Volume-based indicator designed to measure the cumulative flow of money into and out of a asset.
+            </summary>
+            <param name="highPrices">High price of the asset.</param>
+            <param name="lowPrices">Low price of the asset.</param>
+            <param name="closePrices">Close price of the asset.</param>
+            <param name="volumes">Quantity of assets exchanged.</param>
+        </member>
+        <member name="M:TechnicalIndicators.Volume.AccumDistroLine.#ctor(System.Decimal[],System.Decimal[],System.Decimal[],System.Int64[],System.Int64)">
+            <summary>
+            Volume-based indicator designed to measure the cumulative flow of money into and out of a asset. Use this contructor to continue previous calculations.
+            </summary>
+            <param name="highPrices">High price of the asset.</param>
+            <param name="lowPrices">Low price of the asset.</param>
+            <param name="closePrices">Close price of the asset.</param>
+            <param name="volumes">Quantity of assets exchanged.</param>
+            <param name="previousADL">Most recent calculated ADL data point from a previous calculation.</param>
+        </member>
+        <member name="P:TechnicalIndicators.Volume.AccumDistroLine.ADLArray">
+            <summary>
+            Array of ADL data points.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volume.AccumDistroLine.ADL">
+            <summary>
+            Most recent ADL
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Volume.AccumDistroLine.GetADL(System.Decimal[],System.Decimal[],System.Decimal[],System.Int64[])">
+            <summary>
+            Gets an array of Accumulation Distribution Line (ADL) points.
+            </summary>
+            <param name="highPrices">High price of the asset.</param>
+            <param name="lowPrices">Low price of the asset.</param>
+            <param name="closePrices">Close price of the asset.</param>
+            <param name="volumes">Quantity of asset exchanged.</param>
+            <returns>Long Array</returns>
+        </member>
+        <member name="M:TechnicalIndicators.Volume.AccumDistroLine.GetADL(System.Decimal[],System.Decimal[],System.Decimal[],System.Int64[],System.Int64)">
+            <summary>
+            Gets an array of Accumulation Distribution Line (ADL) points. Provides the ability to continue a data series calculation.
+            </summary>
+            <param name="highPrices">High price of the asset.</param>
+            <param name="lowPrices">Low price of the asset.</param>
+            <param name="closePrices">Close price of the asset.</param>
+            <param name="volumes">Quantity of asset exchanged.</param>
+            <param name="previousADL">Most recent ADL data point from previous calculation.</param>
+            <returns>Long Array</returns>
+        </member>
+        <member name="T:TechnicalIndicators.Volume.OnBalanceVolume">
+            <summary>
+            On-balance volume (OBV) is a technical indicator of momentum, using volume changes to make price predictions.
+            </summary>
+        </member>
+        <member name="M:TechnicalIndicators.Volume.OnBalanceVolume.#ctor(System.Int64[],System.Decimal[])">
+            <summary>
+            On-balance volume (OBV) is a technical indicator of momentum, using volume changes to make price predictions.
+            </summary>
+            <param name="volumes">Quantity of assets exchanged.</param>
+            <param name="closePrices">Close price of the asset.</param>
+        </member>
+        <member name="P:TechnicalIndicators.Volume.OnBalanceVolume.OBV">
+            <summary>
+            Most recent On Balance Volume data point.
+            </summary>
+        </member>
+        <member name="P:TechnicalIndicators.Volume.OnBalanceVolume.OBVArray">
+            <summary>
+            Array of On Balance Volume data points.
+            </summary>
+        </member>
+    </members>
+</doc>

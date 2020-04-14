@@ -28,6 +28,7 @@ namespace TechnicalIndicators.Trend
         /// </summary>
         /// <param name="highPrices">High price of the asset.</param>
         /// <param name="lowPrices">Low price of the asset.</param>
+        /// <param name="customPeriod">Period set to user preference.</param>
         public Aroon(decimal[] highPrices, decimal[] lowPrices, int customPeriod)
         {
             Period = customPeriod;

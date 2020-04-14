@@ -1,0 +1,11 @@
+C:\Users\Davet\source\repos\TechIndicators\bin\Release\netcoreapp3.1\C#TechnicalIndicators.deps.json
+C:\Users\Davet\source\repos\TechIndicators\bin\Release\netcoreapp3.1\C#TechnicalIndicators.dll
+C:\Users\Davet\source\repos\TechIndicators\bin\Release\netcoreapp3.1\C#TechnicalIndicators.pdb
+C:\Users\Davet\source\repos\TechIndicators\bin\Release\netcoreapp3.1\C#TechnicalIndicators.xml
+C:\Users\Davet\source\repos\TechIndicators\obj\Release\netcoreapp3.1\TechnicalIndicators.csprojAssemblyReference.cache
+C:\Users\Davet\source\repos\TechIndicators\obj\Release\netcoreapp3.1\TechnicalIndicators.AssemblyInfoInputs.cache
+C:\Users\Davet\source\repos\TechIndicators\obj\Release\netcoreapp3.1\TechnicalIndicators.AssemblyInfo.cs
+C:\Users\Davet\source\repos\TechIndicators\obj\Release\netcoreapp3.1\C#TechnicalIndicators.dll
+C:\Users\Davet\source\repos\TechIndicators\obj\Release\netcoreapp3.1\C#TechnicalIndicators.pdb
+C:\Users\Davet\source\repos\TechIndicators\obj\Release\netcoreapp3.1\C#TechnicalIndicators.deps.json
+C:\Users\Davet\source\repos\TechIndicators\obj\Release\netcoreapp3.1\C#TechnicalIndicators.xml

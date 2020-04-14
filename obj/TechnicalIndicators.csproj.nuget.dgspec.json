@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Source\\Repos\\TechIndicators\\TechnicalIndicators.csproj": {}
+    "C:\\Users\\Davet\\source\\repos\\TechIndicators\\TechnicalIndicators.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Source\\Repos\\TechIndicators\\TechnicalIndicators.csproj": {
+    "C:\\Users\\Davet\\source\\repos\\TechIndicators\\TechnicalIndicators.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\TechIndicators\\TechnicalIndicators.csproj",
-        "projectName": "TechnicalIndicators",
-        "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\TechIndicators\\TechnicalIndicators.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\TechIndicators\\obj\\",
+        "projectUniqueName": "C:\\Users\\Davet\\source\\repos\\TechIndicators\\TechnicalIndicators.csproj",
+        "projectName": "CSharpTechnicalIndicators",
+        "projectPath": "C:\\Users\\Davet\\source\\repos\\TechIndicators\\TechnicalIndicators.csproj",
+        "packagesPath": "C:\\Users\\Davet\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Davet\\source\\repos\\TechIndicators\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Davet\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -26,8 +27,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\Administrator\\source\\repos\\NasdaqAssetData\\bin\\Release": {},
-          "http://packagesource": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

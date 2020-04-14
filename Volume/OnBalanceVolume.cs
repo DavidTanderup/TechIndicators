@@ -4,19 +4,31 @@ using System.Text;
 
 namespace TechnicalIndicators.Volume
 {
+    /// <summary>
+    /// On-balance volume (OBV) is a technical indicator of momentum, using volume changes to make price predictions.
+    /// </summary>
     public class OnBalanceVolume
     {
-        // TODO: Test and verify
-        public OnBalanceVolume(long[] volume, decimal[] closePrices)
+        /// <summary>
+        /// On-balance volume (OBV) is a technical indicator of momentum, using volume changes to make price predictions.
+        /// </summary>
+        /// <param name="volumes">Quantity of assets exchanged.</param>
+        /// <param name="closePrices">Close price of the asset.</param>
+        public OnBalanceVolume(long[] volumes, decimal[] closePrices)
         {
             ClosePrices = closePrices;
-            Volume = volume;
+            Volume = volumes;
             OBVArray = GetOBV();
             OBV = OBVArray[0];
 
         }
-
+        /// <summary>
+        /// Most recent On Balance Volume data point.
+        /// </summary>
         public long OBV { get; set; }
+        /// <summary>
+        /// Array of On Balance Volume data points.
+        /// </summary>
         public long[] OBVArray { get; set; }
         private decimal[] ClosePrices { get; set; }
         private long[] Volume { get; set; }

@@ -14,7 +14,7 @@ namespace TechnicalIndicators.Volume
         /// <param name="highPrices">High price of the asset.</param>
         /// <param name="lowPrices">Low price of the asset.</param>
         /// <param name="closePrices">Close price of the asset.</param>
-        /// <param name="volumes">Quantity of asset exchanged.</param>
+        /// <param name="volumes">Quantity of assets exchanged.</param>
         public AccumDistroLine(decimal[] highPrices, decimal[] lowPrices, decimal[] closePrices, long[] volumes)
         {
             ADLArray = GetADL(highPrices, lowPrices, closePrices, volumes);
@@ -23,6 +23,11 @@ namespace TechnicalIndicators.Volume
         /// <summary>
         /// Volume-based indicator designed to measure the cumulative flow of money into and out of a asset. Use this contructor to continue previous calculations.
         /// </summary>
+        /// <param name="highPrices">High price of the asset.</param>
+        /// <param name="lowPrices">Low price of the asset.</param>
+        /// <param name="closePrices">Close price of the asset.</param>
+        /// <param name="volumes">Quantity of assets exchanged.</param>
+        /// <param name="previousADL">Most recent calculated ADL data point from a previous calculation.</param>
         public AccumDistroLine(decimal[] highPrices, decimal[] lowPrices, decimal[] closePrices, long[] volumes, long previousADL)
         {
             ADLArray = GetADL(highPrices, lowPrices, closePrices, volumes, previousADL);

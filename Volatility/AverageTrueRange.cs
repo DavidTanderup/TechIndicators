@@ -4,17 +4,31 @@ using System.Linq;
 using System.Text;
 
 namespace TechnicalIndicators.Volatility
-{
+{   /// <summary>
+    /// The average true range (ATR) is a technical analysis indicator that measures market volatility by decomposing the entire range of an asset price for that period.
+    /// </summary>
     public class AverageTrueRange
     {
+        /// <summary>
+        /// The average true range (ATR) is a technical analysis indicator that measures market volatility by decomposing the entire range of an asset price for that period.
+        /// </summary>
+        /// <param name="highPrices">High price of the asset.</param>
+        /// <param name="lowPrices">Low price of the asset.</param>
+        /// <param name="closePrices">Close price of the asset.</param>
         public AverageTrueRange(decimal[] highPrices, decimal[] lowPrices, decimal[] closePrices)
         {
             Period = 14;
             ATRArray = Smooth(GetTR(highPrices, lowPrices, closePrices));
             ATR = ATRArray[0];
         }
-        public int Period { get; set; }
+        private int Period { get; set; }
+        /// <summary>
+        /// Array of Average True Range data points.
+        /// </summary>
         public decimal[] ATRArray { get; set; }
+        /// <summary>
+        /// Most recent Average True Range data point.
+        /// </summary>
         public decimal ATR { get; set; }
 
         private decimal[] GetTR(decimal[] highPrices, decimal[] lowPrices, decimal[] closePrices)

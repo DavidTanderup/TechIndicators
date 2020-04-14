@@ -55,7 +55,6 @@ namespace TechnicalIndicators.Trend
         /// Array of averages for a given period of time. Note: Method assumes prices are decending (newest to oldest)
         /// </summary>
         /// <param name="period">Number of time periods being averaged</param>
-        /// <param name="ClosePrices">Prices from the close of a given period</param>
         /// <returns>Decimal Array</returns>
         public decimal[] GetAverage(int period)
         {

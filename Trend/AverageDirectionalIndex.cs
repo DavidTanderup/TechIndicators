@@ -6,10 +6,18 @@ using TechnicalIndicators.Volatility;
 
 namespace TechnicalIndicators.Trend
 {
-    //TODO:
+    /// <summary>
+    /// Average Directional Index (ADX) is a technical analysis indicator used by some traders to determine the strength of a trend.
+    /// </summary>
     public class AverageDirectionalIndex
     {
         private enum DX { Plus, Minus };
+        /// <summary>
+        /// Average Directional Index (ADX) is a technical analysis indicator used by some traders to determine the strength of a trend.
+        /// </summary>
+        /// <param name="highPrices">High price of the asset.</param>
+        /// <param name="lowPrices">Low price of the asset.</param>
+        /// <param name="closePrices">Close price of the asset.</param>
         public AverageDirectionalIndex(decimal[] highPrices, decimal[] lowPrices, decimal[] closePrices)
         {
             Period = 14;
@@ -21,16 +29,34 @@ namespace TechnicalIndicators.Trend
             PlusDMI = PlusDMIArray[0];
             MinusDMI = MinusDMIArray[0];
         }
+        /// <summary>
+        /// Array of ADX data points.
+        /// </summary>
         public decimal[] ADXArray { get; }
+        /// <summary>
+        /// Most recent ADX data point.
+        /// </summary>
         public decimal ADX { get; }
+        /// <summary>
+        /// Array of positive Directional Movement Indicator (+DMI) data points.
+        /// </summary>
         public decimal[] PlusDMIArray { get; }
+        /// <summary>
+        /// Most recent positive Directional Movement Indicator (+DMI) data point.
+        /// </summary>
         public decimal PlusDMI { get; }
+        /// <summary>
+        /// Array of negative Directional Movement Indicator (-DMI) data points.
+        /// </summary>
         public decimal[] MinusDMIArray { get; }
+        /// <summary>
+        /// Most recent negative Directional Movement Indicator (-DMI) data point.
+        /// </summary>
         public decimal MinusDMI { get; }
         private decimal[] ATR { get; }
         private int Period { get; }
         // TODO: Throw error if array lengths are not same.
-        public decimal[] GetADX()
+        private decimal[] GetADX()
         {
             // DX
             decimal[] dX = GetDX(PlusDMIArray, MinusDMIArray);
