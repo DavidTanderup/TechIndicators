@@ -14,6 +14,7 @@ namespace TechnicalIndicators.Trend
         /// <param name="closePrices">Prices from the close of a given period</param>
         public MovingAverage(decimal[] closePrices)
         {
+            new DataErrors().IsReqLength("MA", closePrices.Length);
             ClosePrices = closePrices;
             TwoHundredDayArray = GetAverage(200);
             OneHundredDayArray = GetAverage(100);

@@ -31,11 +31,9 @@ namespace TechnicalIndicators.Momentum
         /// <param name="closePrices">Close price of the asset.</param>
         public MACD(decimal[] closePrices)
         {
-            if (closePrices.Length < 34)
-            {
-                Exception ex = new Exception($"{closePrices.Length} Close prices are an insufficient number. Min = 34. Please add {34 - ClosePrices.Length} more to perform a calculation.");
-                throw ex;
-            }
+            // Check for enough data to perform the calculations.
+            new DataErrors().IsReqLength("MACD", closePrices.Length);
+
             ClosePrices = closePrices;
             MACDArray = GetMACD();
             SignalArray = GetSignal();

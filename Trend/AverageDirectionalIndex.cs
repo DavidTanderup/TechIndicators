@@ -20,6 +20,7 @@ namespace TechnicalIndicators.Trend
         /// <param name="closePrices">Close price of the asset.</param>
         public AverageDirectionalIndex(decimal[] highPrices, decimal[] lowPrices, decimal[] closePrices)
         {
+            new DataErrors().ValidData("ADX", highPrices.Length, lowPrices.Length, closePrices.Length);
             Period = 14;
             ATR = new AverageTrueRange(highPrices, lowPrices, closePrices).ATRArray;
             PlusDMIArray = GetDMI(ATR, GetSmoothDX(highPrices, lowPrices, DX.Plus));

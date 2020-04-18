@@ -16,6 +16,7 @@ namespace TechnicalIndicators.Volume
         /// <param name="closePrices">Close price of the asset.</param>
         public OnBalanceVolume(long[] volumes, decimal[] closePrices)
         {
+            new DataErrors().ValidData("OBV", volumes.Length, closePrices.Length);
             ClosePrices = closePrices;
             Volume = volumes;
             OBVArray = GetOBV();

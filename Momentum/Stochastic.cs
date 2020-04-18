@@ -18,6 +18,7 @@ namespace TechnicalIndicators.Momentum
         /// <param name="closePrices">Close price of the asset.</param>
         public Stochastic(decimal [] highPrices, decimal [] lowPrices,decimal[] closePrices)
         {
+            new DataErrors().ValidData("Stochastic", highPrices.Length, lowPrices.Length, closePrices.Length);
             SlowArray = GetStochastic(highPrices, lowPrices, closePrices);
             Slow = SlowArray[0];
             FastArray = GetFastStochastic(SlowArray);

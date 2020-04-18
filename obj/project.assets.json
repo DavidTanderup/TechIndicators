@@ -1,11 +1,81 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "StockETFHistoricalData/1.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/HistoricalData.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/HistoricalData.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "StockETFHistoricalData/1.2.1": {
+      "sha512": "TXTNwm1QFA2hyxPlcbIdrqWVcq+KVlLoolrIZWNPE2Yi/X8p0dB+2YKN5gO+E+4GqaHPv7tbERvDao5aZ/cVng==",
+      "type": "package",
+      "path": "stocketfhistoricaldata/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OpenSourceLicense.txt",
+        "lib/netcoreapp3.1/HistoricalData.dll",
+        "lib/netcoreapp3.1/HistoricalData.xml",
+        "stocketfhistoricaldata.1.2.1.nupkg.sha512",
+        "stocketfhistoricaldata.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "StockETFHistoricalData >= 1.2.1"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Davet\\.nuget\\packages\\": {},
@@ -15,11 +85,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Davet\\Source\\Repos\\TechIndicators\\TechnicalIndicators.csproj",
+      "projectUniqueName": "C:\\Users\\Davet\\source\\repos\\TechIndicators\\TechnicalIndicators.csproj",
       "projectName": "CSharpTechnicalIndicators",
-      "projectPath": "C:\\Users\\Davet\\Source\\Repos\\TechIndicators\\TechnicalIndicators.csproj",
+      "projectPath": "C:\\Users\\Davet\\source\\repos\\TechIndicators\\TechnicalIndicators.csproj",
       "packagesPath": "C:\\Users\\Davet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Davet\\Source\\Repos\\TechIndicators\\obj\\",
+      "outputPath": "C:\\Users\\Davet\\source\\repos\\TechIndicators\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -50,6 +120,12 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "StockETFHistoricalData": {
+            "target": "Package",
+            "version": "[1.2.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

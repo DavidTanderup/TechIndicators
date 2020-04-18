@@ -15,6 +15,7 @@ namespace TechnicalIndicators.Volatility
         /// <param name="closePrices"></param>
         public BollingerBands(decimal[] closePrices)
         {
+            new DataErrors().IsReqLength("BB", closePrices.Length);
             ClosePrices = closePrices;
             MiddleBandArray = new MovingAverage(ClosePrices).GetAverage(20);
             StandDevArray = GetStanDev();

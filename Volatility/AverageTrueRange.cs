@@ -17,6 +17,7 @@ namespace TechnicalIndicators.Volatility
         /// <param name="closePrices">Close price of the asset.</param>
         public AverageTrueRange(decimal[] highPrices, decimal[] lowPrices, decimal[] closePrices)
         {
+            new DataErrors().ValidData("ATR", highPrices.Length, lowPrices.Length, closePrices.Length);
             Period = 14;
             ATRArray = Smooth(GetTR(highPrices, lowPrices, closePrices));
             ATR = ATRArray[0];

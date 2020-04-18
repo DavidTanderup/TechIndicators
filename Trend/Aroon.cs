@@ -16,6 +16,7 @@ namespace TechnicalIndicators.Trend
         /// <param name="lowPrices">Low price of the asset.</param>
         public Aroon(decimal[] highPrices, decimal[] lowPrices)
         {
+            new DataErrors().ValidData("Aroon", highPrices.Length, lowPrices.Length);
             Period = 25;
             AroonUpArray = GetAroon(highPrices, EndPoint.Max);
             AroonDownArray = GetAroon(lowPrices, EndPoint.Min);

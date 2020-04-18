@@ -17,6 +17,7 @@ namespace TechnicalIndicators.Volume
         /// <param name="volumes">Quantity of assets exchanged.</param>
         public AccumDistroLine(decimal[] highPrices, decimal[] lowPrices, decimal[] closePrices, long[] volumes)
         {
+            new DataErrors().ValidData("ADL",highPrices.Length, lowPrices.Length, closePrices.Length, volumes.Length);
             ADLArray = GetADL(highPrices, lowPrices, closePrices, volumes);
             ADL = ADLArray[0];
         }
@@ -30,6 +31,7 @@ namespace TechnicalIndicators.Volume
         /// <param name="previousADL">Most recent calculated ADL data point from a previous calculation.</param>
         public AccumDistroLine(decimal[] highPrices, decimal[] lowPrices, decimal[] closePrices, long[] volumes, long previousADL)
         {
+            new DataErrors().ValidData("ADL", highPrices.Length, lowPrices.Length, closePrices.Length, volumes.Length);
             ADLArray = GetADL(highPrices, lowPrices, closePrices, volumes, previousADL);
             ADL = ADLArray[0];
         }

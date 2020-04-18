@@ -26,4 +26,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="StockETFHistoricalData" Version="1.2.1" />
+  </ItemGroup>
+
 </Project>

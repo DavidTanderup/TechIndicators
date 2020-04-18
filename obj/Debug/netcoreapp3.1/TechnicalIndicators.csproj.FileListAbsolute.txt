@@ -15,3 +15,11 @@ C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\Techn
 C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.AssemblyInfo.cs
 C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.dll
 C:\Users\Administrator\Source\Repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.pdb
+C:\Users\Davet\source\repos\TechIndicators\bin\Debug\netcoreapp3.1\C#TechnicalIndicators.deps.json
+C:\Users\Davet\source\repos\TechIndicators\bin\Debug\netcoreapp3.1\C#TechnicalIndicators.dll
+C:\Users\Davet\source\repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.csprojAssemblyReference.cache
+C:\Users\Davet\source\repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.AssemblyInfoInputs.cache
+C:\Users\Davet\source\repos\TechIndicators\obj\Debug\netcoreapp3.1\TechnicalIndicators.AssemblyInfo.cs
+C:\Users\Davet\source\repos\TechIndicators\bin\Debug\netcoreapp3.1\C#TechnicalIndicators.pdb
+C:\Users\Davet\source\repos\TechIndicators\obj\Debug\netcoreapp3.1\C#TechnicalIndicators.dll
+C:\Users\Davet\source\repos\TechIndicators\obj\Debug\netcoreapp3.1\C#TechnicalIndicators.pdb

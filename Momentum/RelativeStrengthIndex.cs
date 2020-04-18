@@ -15,6 +15,7 @@ namespace TechnicalIndicators.Momentum
          /// <param name="closePrices">Close price of the asset.</param>
         public RelativeStrengthIndex(decimal[] closePrices)
         {
+            new DataErrors().IsReqLength("RSI", closePrices.Length);
             ClosePrices = closePrices;
             RSIArray = GetRSI();
             RSI = RSIArray[0];
