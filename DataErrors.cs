@@ -108,7 +108,7 @@ namespace TechnicalIndicators
         {
             if (dataLength < minLength)
             {
-                Exception ex = new Exception($"{dataLength} are an insufficient number of data points. Minimum = {minLength}.");
+                Exception ex = new Exception($"{dataLength} is an insufficient number of data points. Minimum = {minLength}.");
                 throw ex;
             }
         }
