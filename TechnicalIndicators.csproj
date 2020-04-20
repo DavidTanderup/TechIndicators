@@ -3,15 +3,20 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>TechnicalIndicators</RootNamespace>
-    <AssemblyName>C#TechnicalIndicators</AssemblyName>
-    <Company>Open Source Black Box Trading</Company>
-    <Authors>Open Source Black Box Trading</Authors>
-    <Description>Ten major technical indicators most commonly used in Stock and FOREX.</Description>
+    <AssemblyName>TechnicalIndicators</AssemblyName>
+    <Company>OpenSource BlackBox Trading</Company>
+    <Authors>OpenSource BlackBox Trading</Authors>
+    <Description>Ten major technical indicators most commonly used in Stock and FOREX.
+MACD, RSI, Stochastic, Aroon, ADX, Moving Averages, Average True Range, Bollinger Bands, Accumulation Distribution Line, On Balance Volume</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>CSharpTechnicalIndicators</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>OpenSourceLicense.txt</PackageLicenseFile>
-    <Copyright>2020 David Tanderup</Copyright>
+    <Copyright>2020</Copyright>
+    <ApplicationIcon />
+    <Product>Trading Technical Indicators</Product>
+    <PackageTags>Trading; Investing; Indicators; Technical Indicators; MACD; Stochastic; RSI; Aroon; On Balance Volume</PackageTags>
+    <PackageReleaseNotes>Recommend use of StockETFHistoricalData NuGet package as the free data source.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

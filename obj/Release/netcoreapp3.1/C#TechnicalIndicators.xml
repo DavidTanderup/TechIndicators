@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>C#TechnicalIndicators</name>
+        <name>TechnicalIndicators</name>
     </assembly>
     <members>
         <member name="T:TechnicalIndicators.Momentum.MACD">

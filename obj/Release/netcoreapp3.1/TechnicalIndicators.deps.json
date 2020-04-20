@@ -1,0 +1,59 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "TechnicalIndicators/1.0.0": {
+        "dependencies": {
+          "StockETFHistoricalData": "1.2.1"
+        },
+        "runtime": {
+          "TechnicalIndicators.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "StockETFHistoricalData/1.2.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/HistoricalData.dll": {
+            "assemblyVersion": "1.2.1.0",
+            "fileVersion": "1.2.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TechnicalIndicators/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "StockETFHistoricalData/1.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TXTNwm1QFA2hyxPlcbIdrqWVcq+KVlLoolrIZWNPE2Yi/X8p0dB+2YKN5gO+E+4GqaHPv7tbERvDao5aZ/cVng==",
+      "path": "stocketfhistoricaldata/1.2.1",
+      "hashPath": "stocketfhistoricaldata.1.2.1.nupkg.sha512"
+    }
+  }
+}
