@@ -39,12 +39,10 @@ namespace TechnicalIndicators.Momentum
             SignalArray = GetSignal();
             EMA12Array = GetEMA(GetPriorEMA(twelve), twelve);
             EMA26Array = GetEMA(GetPriorEMA(twentySix), twentySix);
-            HistogramArray = GetHistogram(MACDArray, SignalArray);
             Macd = MACDArray[0];
             EMA12 = EMA12Array[0];
             EMA26 = EMA26Array[0];
             Signal = SignalArray[0];
-            Histogram = HistogramArray[0];
 
         }
 
@@ -115,7 +113,7 @@ namespace TechnicalIndicators.Momentum
         /// <summary>
         /// Array of Histogram values
         /// </summary>
-        public decimal [] HistogramArray { get; set; }
+        public decimal[] HistogramArray { get; set; }
         /// <summary>
         /// The distance between the MACD and Signal values.
         /// </summary>
@@ -129,7 +127,7 @@ namespace TechnicalIndicators.Momentum
         /// <param name="ema26">Most recent EMA 26 calculation for the asset.</param>
         /// <param name="signal">Most recent Signal calculation for the asset.</param>
         /// <returns>MACD: EMA 12, EMA 26, MACD, and Signal calculations. </returns>
-       
+
         public MACD GetCurrent(decimal close, decimal ema12, decimal ema26, decimal signal)
         {
             return new MACD()
@@ -142,24 +140,6 @@ namespace TechnicalIndicators.Momentum
 
         }
 
-        private decimal [] GetHistogram(decimal [] macd, decimal [] signal)
-        {
-            var count = signal.Length;
-            decimal[] vs = new decimal[count];
-            for (int i = 0; i < count; i++)
-            {
-                // MACD is greater or equal to signal
-                if (signal[i] < macd[i] || signal[i] == macd[0])
-                {
-                    vs[i] = Math.Round(macd[i] - signal[i],2);
-                }
-                else
-                {
-                    vs[i] = Math.Round(signal[i] - macd[i], 2);
-                }
-            }
-            return vs;
-        }
 
         /// <summary>
         /// Gets the first EMA value in the EMA Array
